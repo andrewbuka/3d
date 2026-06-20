@@ -1,5 +1,21 @@
-const header=document.getElementById('header');const burger=document.getElementById('burger');const nav=document.querySelector('.nav');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));burger?.addEventListener('click',()=>nav.classList.toggle('open'));
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const header=document.getElementById('header');
+const burger=document.getElementById('burger');
+const nav=document.querySelector('.nav');
+
+function setMenuOpen(isOpen){
+  nav?.classList.toggle('open',isOpen);
+  burger?.setAttribute('aria-expanded',String(isOpen));
+  document.body.classList.toggle('menu-open',isOpen);
+}
+
+window.addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>40));
+burger?.addEventListener('click',()=>setMenuOpen(!nav?.classList.contains('open')));
+nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenuOpen(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenuOpen(false)});
+
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
 document.addEventListener('mousemove',e=>{const art=document.querySelector('.hero-art');if(!art)return;const x=(e.clientX/window.innerWidth-.5)*18;const y=(e.clientY/window.innerHeight-.5)*-18;art.style.transform=`rotateY(${x/3}deg) rotateX(${y/3}deg)`});
 
 const calculators=document.querySelectorAll('[data-calculator]');
@@ -25,15 +41,18 @@ calculators.forEach(calc=>{
     const paint=calc.querySelector('[data-field="paint"]').checked?2.5*qty:0;
     const logo=calc.querySelector('[data-field="logo"]').checked?1.2*qty+35:0;
     const pack=calc.querySelector('[data-field="pack"]').checked?3*qty:0;
+    const name=calc.querySelector('[data-field="name"]')?.value.trim()||'Не указано';
+    const contact=calc.querySelector('[data-field="contact"]')?.value.trim()||'Не указан';
     const discount=qty>=500?.62:qty>=250?.7:qty>=100?.8:qty>=50?.88:1;
     const total=(calcData.type[type].base*calcData.material[material]*calcData.size[size]*qty*discount)+paint+logo+pack;
     price.textContent=formatBYN(total);
     days.textContent=qty>500?'10–14 дней':qty>150?'7–10 дней':'5–7 дней';
     label.textContent=calcData.type[type].label;
     visual.textContent=calcData.type[type].icon;
-    submit.href='mailto:andrew.buka90@gmail.com?subject='+encodeURIComponent('Запрос КП Printastic')+'&body='+encodeURIComponent(`Здравствуйте! Прошу подготовить КП.\nТип: ${calcData.type[type].label}\nМатериал: ${material.toUpperCase()}\nРазмер: ${calc.querySelector('[data-field="size"] option:checked').textContent}\nКоличество: ${qty}\nОриентировочная стоимость: ${formatBYN(total)} BYN`);
+    submit.href='mailto:andrew.buka90@gmail.com?subject='+encodeURIComponent('Запрос КП Printastic')+'&body='+encodeURIComponent(`Здравствуйте! Прошу подготовить КП.\nИмя: ${name}\nКонтакт: ${contact}\nТип: ${calcData.type[type].label}\nМатериал: ${material.toUpperCase()}\nРазмер: ${calc.querySelector('[data-field="size"] option:checked').textContent}\nКоличество: ${qty}\nОпции: ${paint?'покраска, ':''}${logo?'логотип, ':''}${pack?'упаковка':''}\nОриентировочная стоимость: ${formatBYN(total)} BYN`);
     result.classList.remove('flash'); void result.offsetWidth; result.classList.add('flash');
   }
   fields.forEach(f=>f.addEventListener('input',update));
+  fields.forEach(f=>f.addEventListener('change',update));
   update();
 });

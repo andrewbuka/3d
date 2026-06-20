@@ -17,7 +17,7 @@
       <img src="assets/logo.jpg" alt="Printastic logo">
       <span>PRINTASTIC</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
       <a href="merch.html">Корпоративный мерч</a>
       <a href="#products">Продукция</a>
       <a href="#cases">Кейсы</a>
@@ -25,29 +25,29 @@
       <a href="#contacts">Контакты</a>
     </nav>
     <a class="nav-cta" href="#contacts">Получить расчёт</a>
-    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
   </header>
 
   <main id="top">
     <section class="hero hero-premium" aria-label="Главный баннер Printastic">
-      <img class="hero-premium-bg" src="assets/hero-premium-banner.png" alt="Премиальные 3D-изделия Printastic">
+      <img class="hero-premium-bg" src="assets/hero-premium-banner.png" alt="Премиальные 3D-изделия Printastic" fetchpriority="high">
       <div class="hero-premium-shade"></div>
       <div class="hero-premium-inner">
         <div class="hero-premium-copy reveal">
           <p class="eyebrow">Премиальное 3D-производство</p>
-          <h1><span>PRINTASTIC</span><span>Объекты,</span><span>которые</span><span>представляют бренд</span></h1>
-          <p class="lead">Создаём премиальные корпоративные изделия с помощью современных технологий 3D-производства.</p>
+          <h1><span>PRINTASTIC</span><span>Форма бренда</span><span>— в материале</span></h1>
+          <p class="lead">Создаём премиальные 3D-объекты, награды и корпоративный мерч для компаний, событий и партнёрских подарков.</p>
           <div class="hero-premium-actions">
             <a class="btn outline-gold" href="#contacts">Получить расчёт <span>↗</span></a>
           </div>
         </div>
       </div>
       <div class="hero-premium-stats reveal">
-        <div><i>⚒</i><strong>1000+</strong><span>реализованных проектов</span></div>
-        <div><i>🏆</i><strong>5 лет</strong><span>опыта в 3D-производстве</span></div>
-        <div><i>▦</i><strong>Собственное</strong><span>производство в Минске</span></div>
-        <div><i>⚙</i><strong>Работаем</strong><span>по всей Беларуси и СНГ</span></div>
-        <div><i>✺</i><strong>Премиальное</strong><span>качество и внимание к деталям</span></div>
+        <div><b>I</b><strong>1000+</strong><span>реализованных проектов</span></div>
+        <div><b>II</b><strong>5 лет</strong><span>опыта в 3D-производстве</span></div>
+        <div><b>III</b><strong>Минск</strong><span>собственное производство</span></div>
+        <div><b>IV</b><strong>СНГ</strong><span>работаем с бизнесом в регионе</span></div>
+        <div><b>V</b><strong>Premium</strong><span>детали, отделка и подача</span></div>
       </div>
     </section>
 
@@ -67,16 +67,38 @@
       </div>
     </section>
 
+    <section class="quick-cta section reveal" aria-label="Быстрый расчёт проекта">
+      <div>
+        <p class="eyebrow">Быстрый старт</p>
+        <h2>Расскажите задачу — предложим материал, отделку и предварительную оценку.</h2>
+      </div>
+      <a class="btn primary" href="#calculator">Получить оценку</a>
+    </section>
+
     <section class="section" id="products">
       <div class="section-head reveal">
         <p class="eyebrow">Продукция</p>
         <h2>Что можно изготовить</h2>
       </div>
       <div class="product-grid">
-        <a class="product product-link reveal" href="merch.html"><img src="assets/catalog.png" alt="Корпоративный мерч Printastic"><h3>Корпоративный мерч</h3><p>Брелоки, магниты, подставки, органайзеры.</p><span class="more">Открыть страницу →</span></a>
-        <article class="product reveal"><img src="assets/showcase.png" alt="Награды и подарки"><h3>Награды и подарки</h3><p>Статуэтки, медали, памятные объекты.</p></article>
-        <article class="product reveal"><div class="abstract-object">P</div><h3>Индивидуальные изделия</h3><p>Проектируем форму с нуля под вашу компанию.</p></article>
+        <a class="product product-link product-feature reveal" href="merch.html"><img src="assets/catalog.png" alt="Корпоративный мерч Printastic" loading="lazy"><h3>Корпоративный мерч</h3><p>Брелоки, магниты, welcome-наборы и настольные объекты в едином стиле бренда.</p><div class="product-meta"><span>от 30 шт.</span><span>7–14 дней</span><span>брендирование</span></div><span class="more">Открыть страницу →</span></a>
+        <article class="product reveal"><img src="assets/showcase.png" alt="Награды и подарки" loading="lazy"><h3>Награды и подарки</h3><p>Статуэтки, медали, памятные объекты с покраской, лаком и персонализацией.</p><div class="product-meta"><span>PLA / PETG</span><span>покраска</span></div></article>
+        <article class="product reveal"><div class="abstract-object">P</div><h3>Индивидуальные изделия</h3><p>Проектируем форму с нуля под событие, продукт или фирменный стиль компании.</p><div class="product-meta"><span>3D-модель</span><span>прототип</span></div></article>
       </div>
+    </section>
+
+    <section class="materials section reveal" aria-label="Материалы и отделка">
+      <div class="section-head">
+        <p class="eyebrow">Материалы и отделка</p>
+        <h2>Премиальный вид рождается в фактуре, цвете и постобработке.</h2>
+      </div>
+      <div class="material-grid">
+        <article><span class="swatch swatch-graphite"></span><h3>Graphite</h3><p>Глубокий матовый чёрный для наград, desk-объектов и технологичного мерча.</p></article>
+        <article><span class="swatch swatch-champagne"></span><h3>Champagne</h3><p>Тёплый светлый тон для подарков, которые выглядят мягко и дорого.</p></article>
+        <article><span class="swatch swatch-wood"></span><h3>Wood</h3><p>Фактура дерева для натуральной, тактильной и более камерной подачи.</p></article>
+        <article><span class="swatch swatch-carbon"></span><h3>Carbon</h3><p>Тёмная техническая фактура для премиального industrial-образа.</p></article>
+      </div>
+      <div class="finish-line"><span>Шлифовка</span><span>Покраска</span><span>Лак</span><span>Гравировка</span><span>Индивидуальная упаковка</span></div>
     </section>
 
     <section class="section cases" id="cases">
@@ -86,6 +108,14 @@
         <article class="case reveal"><span>Награды для событий</span><h3>Премиальные награды для корпоративного события</h3><p>Серия объектов с логотипом и индивидуальной гравировкой.</p></article>
         <article class="case reveal"><span>Офисный мерч</span><h3>Настольные объекты для партнёров</h3><p>Функциональные сувениры, которые остаются на рабочем столе.</p></article>
       </div>
+    </section>
+
+    <section class="quick-cta section reveal" aria-label="Консультация по кейсам">
+      <div>
+        <p class="eyebrow">Нужен похожий кейс?</p>
+        <h2>Подберём механику подарка под событие, аудиторию и тираж.</h2>
+      </div>
+      <a class="btn secondary" href="#contacts">Обсудить задачу</a>
     </section>
 
     <section class="section process" id="process">
@@ -98,12 +128,24 @@
       </div>
     </section>
 
+    <section class="packaging section reveal" aria-label="Упаковка и подача">
+      <div class="package-card">
+        <div>
+          <p class="eyebrow">Упаковка и подача</p>
+          <h2>Готовим изделие как подарок, а не просто как деталь с производства.</h2>
+          <p>Подбираем коробки, ложементы, брендированные вкладыши и персональные карточки под событие, аудиторию и уровень подарка.</p>
+        </div>
+        <div class="package-visual" aria-hidden="true"><span></span><b>PRINTASTIC</b></div>
+      </div>
+    </section>
+
     <section class="cta section" id="contacts">
       <div class="cta-card reveal">
         <p class="eyebrow">Начать проект</p>
         <h2>Есть идея? Мы превратим её в готовое изделие.</h2>
-        <div class="calc-wrap" data-calculator>
+        <div class="calc-wrap configurator" id="calculator" data-calculator>
           <div class="calc-form">
+            <div class="configurator-head"><span>Конфигуратор проекта</span><p>Соберите ориентир по изделию, тиражу и отделке — мы уточним детали в КП.</p></div>
             <div class="calc-group">
               <label for="productType">Тип изделия</label>
               <select id="productType" data-field="type">
@@ -144,6 +186,16 @@
               <label><input type="checkbox" data-field="paint"> Покраска</label>
               <label><input type="checkbox" data-field="logo" checked> Логотип</label>
               <label><input type="checkbox" data-field="pack"> Упаковка</label>
+            </div>
+            <div class="calc-grid-two request-fields">
+              <div class="calc-group">
+                <label for="clientName">Ваше имя</label>
+                <input id="clientName" data-field="name" type="text" placeholder="Как к вам обращаться">
+              </div>
+              <div class="calc-group">
+                <label for="clientContact">Телефон или мессенджер</label>
+                <input id="clientContact" data-field="contact" type="text" placeholder="+375 ... / Telegram">
+              </div>
             </div>
             <a class="btn primary calc-submit" href="mailto:andrew.buka90@gmail.com?subject=Расчет%20проекта%20Printastic">Получить КП</a>
           </div>
@@ -236,8 +288,8 @@
     <div class="footer-bottom">
       <span>© 2026 Printastic. Все права защищены.</span>
       <div>
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Публичная оферта</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="offer.html">Публичная оферта</a>
         <a href="#top">Карта сайта</a>
       </div>
     </div>

@@ -350,3 +350,37 @@
 @media(max-width:1180px){
   .hero-premium-stats{overflow:visible}
 }
+
+/* Conversion and accessibility improvements */
+body.menu-open{overflow:hidden}
+.quick-cta{
+  margin-top:56px;
+  padding:34px;
+  border:1px solid rgba(201,151,69,.22);
+  border-radius:32px;
+  background:linear-gradient(135deg,rgba(201,151,69,.14),rgba(255,255,255,.035));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.quick-cta h2{font-size:clamp(30px,3.1vw,54px);max-width:980px}
+.quick-cta .eyebrow{margin:0 0 12px}
+.request-fields{margin-top:6px}
+.merch-audience{padding-top:110px}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.audience-grid article{
+  min-height:190px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03));
+}
+.audience-grid span{color:var(--gold2);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:13px}
+.audience-grid p{color:var(--muted);line-height:1.65;margin:18px 0 0}
+.policy-page{padding:150px 0 100px;max-width:980px}
+.policy-page h1{font-family:Manrope,Inter,sans-serif;font-size:clamp(44px,5vw,76px);line-height:.96;letter-spacing:-.06em;margin:0 0 26px}
+.policy-page h2{font-size:28px;margin:34px 0 12px;letter-spacing:-.03em}
+.policy-page p,.policy-page li{color:var(--muted);line-height:1.75}
+.policy-page a{color:var(--gold2)}
+@media(max-width:900px){.quick-cta{align-items:flex-start;flex-direction:column}.quick-cta .btn{width:100%}.audience-grid{grid-template-columns:1fr}}

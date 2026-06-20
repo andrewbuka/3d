@@ -17,7 +17,7 @@
       <img src="assets/logo.jpg" alt="Printastic logo">
       <span>PRINTASTIC</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
       <a href="merch.html">Корпоративный мерч</a>
       <a href="#products">Продукция</a>
       <a href="#cases">Кейсы</a>
@@ -25,12 +25,12 @@
       <a href="#contacts">Контакты</a>
     </nav>
     <a class="nav-cta" href="#contacts">Получить расчёт</a>
-    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
   </header>
 
   <main id="top">
     <section class="hero hero-premium" aria-label="Главный баннер Printastic">
-      <img class="hero-premium-bg" src="assets/hero-premium-banner.png" alt="Премиальные 3D-изделия Printastic">
+      <img class="hero-premium-bg" src="assets/hero-premium-banner.png" alt="Премиальные 3D-изделия Printastic" fetchpriority="high">
       <div class="hero-premium-shade"></div>
       <div class="hero-premium-inner">
         <div class="hero-premium-copy reveal">
@@ -67,14 +67,22 @@
       </div>
     </section>
 
+    <section class="quick-cta section reveal" aria-label="Быстрый расчёт проекта">
+      <div>
+        <p class="eyebrow">Быстрый старт</p>
+        <h2>Расскажите задачу — предложим формат, материал и ориентир по бюджету.</h2>
+      </div>
+      <a class="btn primary" href="#calculator">Рассчитать проект</a>
+    </section>
+
     <section class="section" id="products">
       <div class="section-head reveal">
         <p class="eyebrow">Продукция</p>
         <h2>Что можно изготовить</h2>
       </div>
       <div class="product-grid">
-        <a class="product product-link reveal" href="merch.html"><img src="assets/catalog.png" alt="Корпоративный мерч Printastic"><h3>Корпоративный мерч</h3><p>Брелоки, магниты, подставки, органайзеры.</p><span class="more">Открыть страницу →</span></a>
-        <article class="product reveal"><img src="assets/showcase.png" alt="Награды и подарки"><h3>Награды и подарки</h3><p>Статуэтки, медали, памятные объекты.</p></article>
+        <a class="product product-link reveal" href="merch.html"><img src="assets/catalog.png" alt="Корпоративный мерч Printastic" loading="lazy"><h3>Корпоративный мерч</h3><p>Брелоки, магниты, подставки, органайзеры.</p><span class="more">Открыть страницу →</span></a>
+        <article class="product reveal"><img src="assets/showcase.png" alt="Награды и подарки" loading="lazy"><h3>Награды и подарки</h3><p>Статуэтки, медали, памятные объекты.</p></article>
         <article class="product reveal"><div class="abstract-object">P</div><h3>Индивидуальные изделия</h3><p>Проектируем форму с нуля под вашу компанию.</p></article>
       </div>
     </section>
@@ -86,6 +94,14 @@
         <article class="case reveal"><span>Награды для событий</span><h3>Премиальные награды для корпоративного события</h3><p>Серия объектов с логотипом и индивидуальной гравировкой.</p></article>
         <article class="case reveal"><span>Офисный мерч</span><h3>Настольные объекты для партнёров</h3><p>Функциональные сувениры, которые остаются на рабочем столе.</p></article>
       </div>
+    </section>
+
+    <section class="quick-cta section reveal" aria-label="Консультация по кейсам">
+      <div>
+        <p class="eyebrow">Нужен похожий кейс?</p>
+        <h2>Подберём механику подарка под событие, аудиторию и тираж.</h2>
+      </div>
+      <a class="btn secondary" href="#contacts">Обсудить задачу</a>
     </section>
 
     <section class="section process" id="process">
@@ -102,7 +118,7 @@
       <div class="cta-card reveal">
         <p class="eyebrow">Начать проект</p>
         <h2>Есть идея? Мы превратим её в готовое изделие.</h2>
-        <div class="calc-wrap" data-calculator>
+        <div class="calc-wrap" id="calculator" data-calculator>
           <div class="calc-form">
             <div class="calc-group">
               <label for="productType">Тип изделия</label>
@@ -144,6 +160,16 @@
               <label><input type="checkbox" data-field="paint"> Покраска</label>
               <label><input type="checkbox" data-field="logo" checked> Логотип</label>
               <label><input type="checkbox" data-field="pack"> Упаковка</label>
+            </div>
+            <div class="calc-grid-two request-fields">
+              <div class="calc-group">
+                <label for="clientName">Ваше имя</label>
+                <input id="clientName" data-field="name" type="text" placeholder="Как к вам обращаться">
+              </div>
+              <div class="calc-group">
+                <label for="clientContact">Телефон или мессенджер</label>
+                <input id="clientContact" data-field="contact" type="text" placeholder="+375 ... / Telegram">
+              </div>
             </div>
             <a class="btn primary calc-submit" href="mailto:andrew.buka90@gmail.com?subject=Расчет%20проекта%20Printastic">Получить КП</a>
           </div>
@@ -236,8 +262,8 @@
     <div class="footer-bottom">
       <span>© 2026 Printastic. Все права защищены.</span>
       <div>
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Публичная оферта</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="offer.html">Публичная оферта</a>
         <a href="#top">Карта сайта</a>
       </div>
     </div>
